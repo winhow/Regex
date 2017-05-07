@@ -1011,7 +1011,7 @@ I found the text "dog" starting at index 0 and ending at index 3.</pre>
 　　启用模式的字面分析。指定该标志后，指定模式的输入字符串作为字面上的字符序列来对待。输入序列中的元字符和转义字符不具有特殊的意义了。CASE_INSENSITIVE 和 UNICODE_CASE 与此标志一起使用时，会对匹配产生一定的影响。其他的标志就变得多余了。启用字面分析没有内嵌标志表达式。<br/>
 
 <div id="h4">Pattern.MULTILINE</span></div>
-　　启用多行（multiline）模式。在多行模式下，表达式<code>^</code>和<code>$</code>分别匹配输入序列行结束符前面和行结束符的前面。默认情况下，表达式仅匹配整个输入序列的开始和结尾。多行模式也能通过内嵌标志表达式<code>(?m)</code>来启用。<br/>
+　　启用多行（multiline）模式。在多行模式下，表达式<code>^</code>和<code>$</code>分别匹配输入序列行开始和行结束符的前面。默认情况下，表达式仅匹配整个输入序列的开始和结尾。多行模式也能通过内嵌标志表达式<code>(?m)</code>来启用。<br/>
 
 <div id="h4">Pattern.UNICODE_CASE</span></div>
 　　启用可折叠感知 Unicode（Unicode-aware case folding）大小写。在指定此标志后，需要通过 CASE_INSENSITIVE 标志来启用，不区分大小写区配将在 Unicode 标准的意义上来完成。默认情况下，不区分大小写匹配仅匹配 US-ASCII 字符集中的字符。可折叠感知 Unicode 大小写也能通过内嵌标志表达式<code>(?u)</code>来启用。指定此标志可能会对性能会有一定的影响。<br/>
