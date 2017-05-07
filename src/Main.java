@@ -1,20 +1,27 @@
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/**
+ * Created by winhow on 2017/5/7.
+ */
 public class Main {
 
-    private static final String REGEX = "\\bdog\\b";
-    private static final String INPUT = "dog dog dog doggie dogg";
-
     public static void main(String[] args) {
-        Pattern p = Pattern.compile(REGEX);
-        Matcher m = p.matcher(INPUT);    // 获得一个匹配器对象
-        int count = 0;
-        while(m.find()) {
-            count++;
-            System.out.println("Match number "+count);
-            System.out.println("start(): "+m.start());
-            System.out.println("end(): "+m.end());
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.printf("%nEnter your regex: ");
+            Pattern pattern = Pattern.compile(scanner.nextLine(),Pattern.CASE_INSENSITIVE);
+            System.out.printf("Enter input string to search: ");
+            Matcher matcher = pattern.matcher(scanner.nextLine());
+            boolean found = false;
+            while (matcher.find()) {
+                System.out.printf("I found the text \"%s\" starting at index %d and ending at index %d.%n",
+                        matcher.group(), matcher.start(), matcher.end());
+                found = true;
+            }
+            if (!found) {
+                System.out.printf("No match found.%n");
+            }
         }
     }
 }

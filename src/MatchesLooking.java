@@ -10,7 +10,7 @@ public class MatchesLooking {
 
     public static void main(String[] args) {
    
-        // ��ʼ��
+        // 创建匹配规则
         pattern = Pattern.compile(REGEX);
         matcher = pattern.matcher(INPUT);
 

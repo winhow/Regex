@@ -3,9 +3,9 @@ import java.util.regex.Pattern;
 
 public class RegexDemo {
  
-    private static String REGEX = "a*b";
-    private static String INPUT = "aabfooaabfooabfoob";
-    private static String REPLACE = "-";
+    private static String REGEX = "dog";
+    private static String INPUT = "The dog says meow. All dogs say meow.";
+    private static String REPLACE = "cat";
  
     public static void main(String[] args) {
         Pattern p = Pattern.compile(REGEX);
@@ -14,7 +14,7 @@ public class RegexDemo {
         while(m.find()){
             m.appendReplacement(sb, REPLACE);
         }
-        m.appendTail(sb);
         System.out.println(sb.toString());
+        System.out.println(m.appendTail(sb));
     }
 }
